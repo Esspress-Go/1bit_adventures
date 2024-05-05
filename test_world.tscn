@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3eufxwjuo0d1"]
+
+[ext_resource type="PackedScene" uid="uid://dmbh1mlmhwswt" path="res://entities/player.tscn" id="1_1nty5"]
+[ext_resource type="Script" path="res://test_world.gd" id="1_4pvk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bqk1"]
+size = Vector2(129.615, 130.44)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gg3kx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4pvk4")
+
+[node name="Player" parent="." instance=ExtResource("1_1nty5")]
+position = Vector2(262, 217)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(346, 340)
+scale = Vector2(7.36, 1)
+collision_priority = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-1.63044, -4.52344)
+scale = Vector2(0.414062, 0.390625)
+shape = SubResource("RectangleShape2D_1bqk1")
+
+[node name="Icon" type="Sprite2D" parent="Floor/CollisionShape2D"]
+position = Vector2(-0.164055, 1.34003)
+scale = Vector2(129.615, 122.88)
+texture = SubResource("CanvasTexture_gg3kx")

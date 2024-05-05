@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmbh1mlmhwswt"]
+
+[ext_resource type="Script" path="res://entities/player.gd" id="1_nxl1x"]
+[ext_resource type="Texture2D" uid="uid://dfapivwesabbv" path="res://assests/Red_worrier_walk.png" id="1_wgxtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo7um"]
+size = Vector2(10, 14)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_nxl1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wgxtg")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_fo7um")
